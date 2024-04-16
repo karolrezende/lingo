@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { ClerkLoading } from "@clerk/nextjs";
+import { Loader } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +9,14 @@ export default function Home() {
       <div className="relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px]  mb-8 lg:mb-0">
         <Image src={'/hero.svg'} fill alt='hero'/>
       </div>
+      <div className="flex flex-col items-center gap-y-8">
+        <h1 className="text-xl lg:text-3xl font-bold text-rose-300 max-w-[480px] text-center">
+          Aprenda, pratique e domine novas linguagens com Lingo.
+        </h1>
+      </div>
+      <ClerkLoading>
+        <Loader  className="h-5 w-5 text-muted-foreground animate-spin"/>
+      </ClerkLoading>
     </div>
   )
 }
